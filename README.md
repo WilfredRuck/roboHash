@@ -1,6 +1,6 @@
 # RoboHash
 
-<a href="https://wilfredruck.herokuapp.com/">RoboHash</a> is a React app that takes in user input and makes a call to the https://robohash.org API. The application then displays an image based on the text that was entered.
+<a href="https://wilfredruck.herokuapp.com/">RoboHash</a> is a React app that takes in user input and makes a call to the https://robohash.org API. The application then uses the API response to display a unique image based on the text that was entered.
 
 ## Screenshots
 
