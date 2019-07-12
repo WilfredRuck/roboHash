@@ -1,3 +1,7 @@
+body {
+  background-color: #fefaef;
+}
+
 .app {
   display: flex;
   justify-content: center;
@@ -6,7 +10,7 @@
 }
 
 .main-content {
-  width: 300px;
+  width: 400px;
 }
 
 form {
@@ -26,13 +30,75 @@ form input {
 
 form input[type="submit"] {
   display: inline-block;
-  background-color: greenyellow;
+  background-color: #84bd5e;
+  color: #ffffff;
   font-size: 15px;
+  font-weight: bolder;
   -webkit-appearance: none;
 }
 
-.image-section {
-  height: 300px;
-  width: 100%;
-  border: 1px solid #000000
+form input[type="submit"]:disabled {
+  background-color: grey;
+}
+
+img, .loading-section {
+  height: 400px;
+  width: 400px;
+  border: 1px solid #000000;
+  background-color: #343e55;
+}
+
+.loading-section {
+  color: #ffffff;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  -webkit-animation: color-change 1s infinite;
+  -moz-animation: color-change 1s infinite;
+  -o-animation: color-change 1s infinite;
+  -ms-animation: color-change 1s infinite;
+  animation: color-change 1s infinite;
+}
+
+@-webkit-keyframes color-change {
+  0% { color: #e04462; }
+  50% { color: #343e55; }
+  75% { color: #84bd5e; }
+  100% { color: #e04462; }
+}
+@-moz-keyframes color-change {
+  0% { color: #e04462; }
+  50% { color: #343e55; }
+  75% { color: #84bd5e; }
+  100% { color: #e04462; }
+}
+@-ms-keyframes color-change {
+  0% { color: #e04462; }
+  50% { color: #343e55; }
+  75% { color: #84bd5e; }
+  100% { color: #e04462; }
+}
+@-o-keyframes color-change {
+  0% { color: #e04462; }
+  50% { color: #343e55; }
+  75% { color: #84bd5e; }
+  100% { color: #e04462; }
+}
+@keyframes color-change {
+  0% { color: #e04462; }
+  50% { color: #343e55; }
+  75% { color: #84bd5e; }
+  100% { color: #e04462; }
+}
+
+@keyframes spinner {
+  to { transform: rotate(360deg); }
+}
+
+.fa-spinner {
+  animation: spinner 1s linear infinite;
 }
