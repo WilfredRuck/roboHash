@@ -10,8 +10,10 @@ class App extends React.Component {
       loading: false,
       text: "",
       roboImage: "https://designshack.net/wp-content/uploads/placeholder-image.png",
+      images: [],
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   updateText(field) {
@@ -27,10 +29,15 @@ class App extends React.Component {
     this.generateImage();
   }
 
+  handleClick(img) {
+    if (this.state.roboImage !== img) this.setState({ roboImage: img });
+  }
+
   async generateImage() {
     try {
       const response = await fetch(`https://robohash.org/${this.state.text}`);
-      this.setState({ loading: false, roboImage: response.url });
+      const newImages = this.state.images.concat(response.url);
+      this.setState({ loading: false, roboImage: response.url, images: newImages });
     } 
     catch {
       alert("Couldn't generate an image for input");
@@ -39,6 +46,9 @@ class App extends React.Component {
 
   render() {
     const {loading} = this.state;
+    const images = this.state.images.map((image, idx) => {
+      return <li key={idx} onClick={() => this.handleClick(image)}> <img className="prev-image" src={image}></img> </li>
+    });
     return (
       <div className="app">
         <h1>Wilfred Ruck</h1>
@@ -53,6 +63,9 @@ class App extends React.Component {
           : <img src={this.state.roboImage} alt="Robohash"></img>
           }
         </div>
+        <ul>
+          {images}
+        </ul>
       </div>
     );
   }
