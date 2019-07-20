@@ -41,17 +41,36 @@ form input[type="submit"]:disabled {
   background-color: grey;
 }
 
-img, .loading-section {
+.main-image, .loading-section {
   height: 400px;
   width: 400px;
   border: 1px solid #000000;
   background-color: #343e55;
 }
 
+ul {
+  display: flex;
+  list-style: none;
+  width: 400px;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+li:hover {
+  background-color: #343e55;
+  cursor: pointer;
+}
+
+.prev-images {
+  height: 100px;
+  width: auto;
+}
+
 .loading-section {
   color: #ffffff;
   font-size: 50px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
